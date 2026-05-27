@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Installation for E-Libc additional header files
+# Integration to Makefile will come soon
+# Assumes you're in the parent directory
+
+if [ "$(id -u)" -ne 0 ]; then echo "Run as root"; exit 1; fi
+
+if command -v install >/dev/null; then
+  install E-Libc/elibc.h /usr/include/elibc.h
+  install E-Libc/format.h /usr/include/format.h
+else
+  echo "Install command not found
+fi
